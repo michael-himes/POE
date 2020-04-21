@@ -112,9 +112,11 @@ name = content[1]
 base = content[2]
 for element in content:
     if "Sockets" in element:
-        linked = element.count('-')+1
-        data['link_min'] = linked - 1
-        data['link_max'] = linked + 1
+        linked = element.count('-')
+        if linked != 0:
+            linked += 1
+            data['link_min'] = linked - 1
+            data['link_max'] = linked + 1
 print(name)
 print(base)
 print(linked, "links +/- 1")
