@@ -110,6 +110,7 @@ data = {
 print() # i needs space
 name = content[1]
 base = content[2]
+linked = 0
 for element in content:
     if "Sockets" in element:
         linked = element.count('-')
@@ -119,7 +120,8 @@ for element in content:
             data['link_max'] = linked + 1
 print(name)
 print(base)
-print(linked, "links +/- 1")
+if linked != 0:
+    print(linked, "links +/- 1")
 data['name'] = name
 data['base'] = base
 
