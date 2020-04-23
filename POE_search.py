@@ -140,6 +140,10 @@ def search():
                 curency[value] = 1
             else:
                 curency[value] += 1
+        elif "Nothing was found." in line:
+            print('\t'+"Nothing was found!")
+            print('\n'+'\t'+response.url+'\n') 
+            return 1
     for item in curency:
         print('\t'+str(curency[item])+'\t'+item)
     print('\n'+'\t'+response.url+'\n') # i needs space
